@@ -7,7 +7,13 @@ import android.view.View
 import android.widget.EditText
 
 class MainActivity : AppCompatActivity() {
+    companion object{
+        val INFO_EXTRA_MENSAGEM = "MENSAGEM"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
@@ -17,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         val mensagem = editTextMensagem.text.toString()
 
         val intent = Intent(this,MostraInformacaoActivity::class.java)
-        intent.putExtra("MENSAGEM", mensagem)
+        intent.putExtra(INFO_EXTRA_MENSAGEM , mensagem)
 
         startActivity(intent)
 
