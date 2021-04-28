@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
 import java.time.LocalDateTime
+import java.util.*
 
 class MostraInformacaoActivity : AppCompatActivity() {
 
@@ -14,11 +15,11 @@ class MostraInformacaoActivity : AppCompatActivity() {
         val textViewMensagem = findViewById<TextView>(R.id.textViewMensagem)
         val mensagem = intent.getStringExtra(MainActivity.INFO_EXTRA_MENSAGEM)
 
-        val textViewHora = findViewById<TextView>(R.id.textViewHora);
-        val hora = intent.getStringExtra(MainActivity.INFO_DATA)
+        val textViewHora = findViewById<TextView>(R.id.textViewHora)
+        val hora = intent.getSerializableExtra(MainActivity.INFO_DATA) as Date
 
-        textViewMensagem.text = mensagem
-        textViewHora.text = hora
+        textViewMensagem.setText(mensagem)
+        textViewHora.setText(hora.toString())
 
     }
 }

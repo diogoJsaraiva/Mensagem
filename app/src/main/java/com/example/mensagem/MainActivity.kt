@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
             return
         }
 
-        
+
         val data = Date()
 
         val intent = Intent(this,MostraInformacaoActivity::class.java).apply {
