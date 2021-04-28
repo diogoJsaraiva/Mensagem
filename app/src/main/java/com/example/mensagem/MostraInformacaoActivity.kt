@@ -3,6 +3,7 @@ package com.example.mensagem
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import java.text.SimpleDateFormat
 import java.time.LocalDateTime
 import java.util.*
 
@@ -18,8 +19,10 @@ class MostraInformacaoActivity : AppCompatActivity() {
         val textViewHora = findViewById<TextView>(R.id.textViewHora)
         val hora = intent.getSerializableExtra(MainActivity.INFO_DATA) as Date
 
+        val df = SimpleDateFormat("HH:mm:ss")
+
         textViewMensagem.setText(mensagem)
-        textViewHora.setText(hora.toString())
+        textViewHora.setText(df.format(hora))
 
     }
 }

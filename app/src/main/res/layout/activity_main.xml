@@ -19,7 +19,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:hint="Mensagem"
-        android:inputType="textPersonName" />
+        android:inputType="textUri|textShortMessage|textAutoCorrect|textMultiLine|text" />
 
     <Button
         android:id="@+id/buttonEnviar"
